@@ -91,10 +91,10 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     if (result.data) {
       // Store user data
       const userData: User = {
-        id: result.data.id || 'unknown',
-        email: result.data.email,
-        created_at: result.data.created_at,
-        updated_at: result.data.updated_at,
+        id: (result.data as any).id || 'unknown',
+        email: (result.data as any).email,
+        created_at: (result.data as any).created_at,
+        updated_at: (result.data as any ).updated_at,
       };
 
       localStorage.setItem('userData', JSON.stringify(userData));
