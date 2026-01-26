@@ -20,10 +20,13 @@ class ApiClient {
     requireAuth: boolean = true
   ): Promise<ApiResponse<T>> {
     const url = `${this.baseUrl}${endpoint}`;
-    const headers: HeadersInit = {
+    const headers: Record<string,string> = {
       'Content-Type': 'application/json',
-      ...options.headers,
+    
     };
+    if (options.headers) {
+      Object.assign(headers, options.headers);
+    }
 
     // Add authorization header if required and token exists
     if (requireAuth) {
