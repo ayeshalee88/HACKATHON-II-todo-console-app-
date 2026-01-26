@@ -7,6 +7,19 @@ interface User {
   created_at: string;
   updated_at: string;
 }
+// Add these interfaces for API responses
+interface LoginResponse {
+  access_token: string;
+  user_id?: string;
+  token_type?: string;
+}
+
+interface SignupResponse {
+  id: string;
+  email: string;
+  created_at: string;
+  updated_at: string;
+}
 
 interface AuthContextType {
   user: User | null;
