@@ -1,12 +1,13 @@
-# Claude / Spec tools
-.claude/
-.specify/
+# Node
+node_modules/
 
 # Python
 __pycache__/
-*.pyc
+venv/
 .venv/
+
+# Environment
+.env
 
 # OS
 .DS_Store
-
